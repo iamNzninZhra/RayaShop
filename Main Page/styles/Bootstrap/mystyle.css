@@ -1,0 +1,93 @@
+@media all and (max-width: 767.999px){
+    .picback{
+        height: 50vh;
+        font-size: 14px;
+    }
+}
+@media all and (min-width: 768px) {
+    .picback{
+        height: 90vh;
+        font-size: 24px;
+    }
+    .top-md-25{
+        top: 25%;
+    }
+}
+
+:root{
+    --color-pink:#FF3E41;
+    --color-blue:#51CFED;
+    font-size: 12px;
+}
+.bgpink{
+    background: var(--color-pink);
+}
+.bgblue{
+    background: var(--color-blue);
+}
+.btnpink{
+    background: var(--color-pink);
+    color:#fff;
+    border: 1px solid var(--color-pink);
+}
+.btnpink:hover{
+    transition: all 0.5s;
+    color: var(--color-pink);
+    background:#fff;
+    border: 1px solid var(--color-pink);
+}
+.btnblue{
+    background: var(--color-blue);
+    color:#fff;
+    border: 1px solid var(--color-blue);
+}
+.btnblue:hover{
+    transition: all 0.5s;
+    color: var(--color-blue);
+    background:#fff;
+    border: 1px solid var(--color-blue);
+}
+.textpink{
+    color: var(--color-pink);
+}
+.textblue{
+    color: var(--color-blue);
+}
+.fontsizeheader{
+    font-size: 2.5rem;
+}
+.borderpink{
+    border-color: var(--color-pink) !important;
+}
+.picback{
+    background: url("../image/carousel-1.jpg") no-repeat center center;
+    background-size: cover;
+}
+.aboutpic{
+    background: url("../image/about.jpg") no-repeat center center;
+    background-size: cover;
+    height: 500px;
+}
+.mc-5{
+    margin: 20vh 0px;
+}
+.servicecard img{
+    transition: all 1s;
+}
+.servicecard:hover img{
+    transition: all 1s;
+    transform: scale(1.1,1.1);
+}
+.servicecard a{
+    overflow: hidden;
+    height: 40px;
+}
+.servicecard span{
+    position: relative;
+    display: block;
+    left: -100%;
+}
+.servicecard:hover span{
+   left:0px;
+    transition: all 1s;
+}

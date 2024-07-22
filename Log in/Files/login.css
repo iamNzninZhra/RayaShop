@@ -1,0 +1,186 @@
+/* base styles */
+.fieldset-login,
+.fieldset-register
+{
+    position: relative;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    will-change: transform;
+    /* make shadows of inner elements visible */
+    padding: 6px;
+    margin: 13px;
+}
+.fieldset-login::before,
+.fieldset-register::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-100%);
+}
+
+
+.boxvalidation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    width: 42px;
+    border-radius: 6px;
+    /* box-shadow: 0 0 6px 1px hsla(240, 54%, 61%, 0.2); */
+    overflow: hidden;
+    will-change: transform;
+}
+.boxvalidation:focus-within {
+    box-shadow: 0 0 6px 1px hsla(240, 54%, 61%, 0.2), 0 0 0 2px hsla(174, 65%, 41%, 0.827);
+}
+.boxvalidation::before,
+.boxvalidation::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.boxvalidation::before {
+    background: hsl(240, 54%, 97%);
+    z-index: 1;
+    transition: background-color 450ms cubic-bezier(0.25, 0.01, 0.25, 1);
+}
+.boxvalidation::after {
+    transform: translateY(100%);
+    background-color: hsl(145, 0%, 42%);
+    opacity: 0;
+    z-index: 10;
+    transition: transform 450ms cubic-bezier(0.25, 0.01, 0.25, 1),
+    opacity 450ms cubic-bezier(0.25, 0.01, 0.25, 1), background-color 450ms cubic-bezier(0.25, 0.01, 0.25, 1);
+}
+
+.field {
+    position: relative;
+    border: 0;
+    outline: 0;
+    font-size: 25.21px;
+    line-height: 42px;
+    color: hsl(0, 0%, 20%);
+    background-color: transparent;
+    text-align: center;
+    z-index: 100;
+}
+.field::placeholder {
+    color: hsl(240, 54%, 87%);
+}
+
+/* animate-success styles  */
+
+.animate-success.fieldset-login {
+    padding: 0;
+    margin: 0;
+}
+.animate-success.fieldset-login::before {
+    background-color: hsl(145, 63%, 42%);
+    transform: translateX(0);
+    transition: transform 300ms cubic-bezier(0.25, 0.01, 0.25, 1) calc(450ms);
+}
+
+.animate-success > .boxvalidation {
+    box-shadow: none;
+    transition: transform 300ms cubic-bezier(0.25, 0.01, 0.25, 1) calc(
+        450ms + 300ms
+    );
+}
+.animate-success > .boxvalidation:nth-child(1) {
+    transform: translateX(24px);
+}
+.animate-success > .boxvalidation:nth-child(2) {
+    transform: translateX(12px);
+}
+.animate-success > .boxvalidation:nth-child(4) {
+    transform: translateX(-12px);
+}
+.animate-success > .boxvalidation:nth-child(5) {
+    transform: translateX(-24px);
+}
+
+.animate-success > .boxvalidation::before {
+    background-color: transparent;
+}
+.animate-success > .boxvalidation::after {
+    background-color: hsl(145, 63%, 42%);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.animate-success > .boxvalidation > .field,
+.animate-success > .boxvalidation > .field::placeholder {
+    color: hsl(0, 0%, 95%);
+    transition: color 450ms cubic-bezier(0.25, 0.01, 0.25, 1);
+}
+
+/* animate-failure styles  */
+
+.animate-failure.fieldset-login {
+    animation-name: shaking;
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.25, 0.01, 0.25, 1);
+    animation-delay: calc(450ms);
+}
+
+.animate-failure > .boxvalidation::before {
+    background-color: transparent;
+}
+.animate-failure > .boxvalidation::after {
+    background-color: hsl(0, 79%, 63%);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.animate-failure > .boxvalidation > .field,
+.animate-failure > .boxvalidation > .field::placeholder {
+    color: hsl(0, 0%, 95%);
+    transition: color 450ms cubic-bezier(0.25, 0.01, 0.25, 1);
+}
+
+@keyframes shaking {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25%,
+    75% {
+        transform: translateX(10px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+}
+
+
+
+#login button > .spinner-grow{
+    display: none;
+}
+
+#login button:disabled > .spinner-grow{
+    display: block;
+}
+
+/* End SMS Code input styles */
+#toastr-container {
+    margin:12px;
+}
+.toastr-message {
+    padding-right: 0px !important;
+}

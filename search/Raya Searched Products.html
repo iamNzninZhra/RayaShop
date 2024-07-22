@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات شما | رایا</title>
+    <link rel="icon" href="Files/logo/raya12.png" type="image/png">
+    <script src="styles/JS/axios.min.js"></script>
+    <link rel="stylesheet" href="styles/CSS/toastr.min.css">
+    <link rel="stylesheet" href="cdn/bootstrap-5.2.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/CSS/bundle.min.css">
+    <link rel="stylesheet" href="styles/CSS/style.css">
+</head>
+<style>
+    @font-face {
+        font-family: myFirstFont;
+        src: url(styles/fonts/yekan.woff);
+    }
+
+    * {
+        font-family: myFirstFont;
+    }
+</style>
+
+<body>
+    <!-- TOPBAR -->
+    <div class=" container">
+        <div class="row">
+            <div id="topbar">
+                <div class="topbar d-flex align-items-center justify-content-between  mobile-justify-content-center">
+                    <div id="logo-wrapper"><a href=""><img src="Files/logo/raya12.png" alt="رایا" /></a>
+                        <span></span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-end">
+                        <div id="search-wrapper">
+                            <form action="../search/" method="get" id="search-form">
+                                <input id="searchElement" type="text" name="q" placeholder="جستجوی محصولات"
+                                    onkeyup="searchProducts()" autocomplete="off">
+                                <button type="submit" id="searchInput">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </form>
+                            <div class="search-products d-flex flex-column gap-3"> -->
+                                <!-- <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <img class="rounded-5" src="Files/1687773661-jz1TA7ooh4JN3VMb.jpg"
+                                style="width: 40px; height: 40px;">
+                            <div>زنانه</div>
+
+                        </div>
+                        <div>
+                            <div>تومان 349,000</div>
+                        </div>
+                    </div> -->
+                            </div>
+                        </div>
+                        <a href="#" id="basket-link">
+                            <span><i class="fa fa-shopping-cart"></i></span><em id="basket-badge">0</em>
+                        </a>
+                        <div class="search-result" id="resultContainer"></div>
+
+                        <a href="../Log in/Log in.html" title="" target="_self" class="position-relative"
+                            style="right: 154%;">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TOPBAR MENU -->
+    <div class="topbar-menu-wrapper">
+        <div class="container">
+            <ul>
+                <li class="has-megamenu">
+                    <a href="#"><span>زنانه</span><i class="fa fa-angle-down"></i></a>
+                    <ul class="megamenu">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>بالاپوش</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">بلوز/شومیز</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">مانتو/تونیک</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">پیراهن/سارافون</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">سرهمی/اورال</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">کت/کت کتان/کت جین</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">کاپشن/پافر/بارانی/پالتو</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">هودی/سویشرت</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">پلیور/ژاکت</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>شلوار</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">جین</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">پارچه ای/کتان</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">راسته و کلاسیک</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">اسلش/جاگر</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">لگ/ساپورت</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">شلوارک</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">شلوار راحتی</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>دامن</h4>
+                                    </a>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>لباس اسپرت و راحتی</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">تیشرت/پولوشرت</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">بلوز آستین بلند</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">تاپ/نیم تنه</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">لباس خواب/لباس زیر</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">ست راحتی/ست اسپرت</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>سایر محصولات</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">دستکش</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">حوله</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">یقه حجاب</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">کیف آرایشی</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">ارگانایزر</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">جوراب</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">چشم بند</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="#" title="" target="_self">
+                        <div><span>کیف</span></div>
+                    </a></li>
+                <li class="has-megamenu">
+                    <a href="#"><span>مردانه</span><i class="fa fa-angle-down"></i></a>
+                    <ul class="megamenu">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>بالاپوش</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">پیراهن مردانه</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">پلیور/ سویشرت / هودی</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">کاپشن/کت</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>شلوار</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">جین</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">شلوار راحتی/شلوارک</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>لباس اسپرت</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">تیشرت/پولوشرت</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" title="" target="_self">ست اسپرت/ست راحتی</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>سایر</h4>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#" title="" target="_self">جوراب</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <li class="has-megamenu">
+                    <a href="#"><span>کلاه/روسری/شال</span><i class="fa fa-angle-down"></i></a>
+                    <ul class="megamenu">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>کلاه</h4>
+                                    </a>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>شال</h4>
+                                    </a>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="subcategory"><a href="#" title="" target="_self">
+                                        <h4>روسری</h4>
+                                    </a>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="#" title="" target="_self">
+                        <div><span>حراجی</span></div>
+                    </a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- BREADCRUMBS -->
+    <div class="container" style="margin-right: 15px;">
+        <div class="row">
+            <header>
+                <div id="breadcrumbs">
+                    <a href="#" title="" target="_self"">فروشگاه رایا</a>
+                    <span>محصولات ${product.title}</span>
+                </div>     
+            </header>  
+        </div>
+    </div>
+        
+
+    
+
+
+    
+
+    <div class=" container">
+                        <div class="row">
+                            <div class="col d-flex">
+                                <section class="products-container search-products" id="latest-products">
+                                    <div class="section-title">
+                                        <h1>${product.title}</h1>
+                                    </div>
+                                    <div class="product-outer">
+                                        <a class="product-wrapper">
+                                            <div class="product-wrapper__image">
+                                                <img src="${product.img}" alt="" onclick="addtobasket()">
+                                            </div>
+                                            <div class="product-wrapper__body">
+                                                <h3>${product.h3}</h3>
+                                                <div class="d-flex align-items-end justify-content-between">
+                                                    <strong>${product.strong}</strong>
+                                                    <div
+                                                        class="d-flex align-items-end justify-content-center flex-column">
+                                                        <strong class="product-wrapper__price">${product.price}</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                </div>
+
+            <script src="Script.js"></script>
+            <script src="cdn/FontAwesome.js"></script>
+            
+</body>
+
+</html>

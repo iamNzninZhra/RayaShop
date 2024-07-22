@@ -1,0 +1,1622 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>رایا | ورود به پنل کاربری</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="Files/raya12.png" />
+    <meta name="csrf-token" content="UttsEHBZPKQQR2xn1Mv1iL5spNwotczCbRVMDJ0c">
+
+
+    <link rel="stylesheet" href="Files/fonticons.css" />
+    <link rel="stylesheet" href="Files/persian-font.css" />
+
+
+
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+
+
+
+    <link rel="preload" href="Files/plugins.bundle.rtl.css" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        type="text/css"><noscript>
+        <link rel="stylesheet" href="Files/plugins.bundle.rtl.css">
+    </noscript>
+    <link rel="preload" href="Files/plugins-custom.bundle.rtl.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" type="text/css"><noscript>
+        <link rel="stylesheet" href="Files/plugins-custom.bundle.rtl.css">
+    </noscript>
+    <link href="Files/style.bundle.rtl.css" rel="stylesheet" type="text/css" />
+    <link rel="preload" href="Files/datatables.bundle.rtl.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'" type="text/css"><noscript>
+        <link rel="stylesheet" href="Files/datatables/datatables.bundle.rtl.css">
+    </noscript>
+    <link href="Files/custom.rtl.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        @font-face {
+            font-family: myFirstFont;
+            src: url(fonts/yekan.woff );
+        }
+
+        body,
+        text,
+        .tooltip {
+            font-family: myFirstFont;
+        }
+
+        html {
+            font-size: 0.75rem !important;
+        }
+
+        .d2h-file-header {
+            font-family: myFirstFont;
+        }
+
+        .d2h-code-side-line {
+            direction: ltr;
+        }
+
+        .d2h-file-name-wrapper {
+            font-size: 12px !important;
+        }
+
+        .d2h-file-header .d2h-icon,
+        .d2h-file-header .d2h-tag {
+            display: none;
+        }
+
+        .toastr-close-button {
+            float: right !important;
+            right: -0.3em !important;
+
+        }
+
+        .toastr-message {
+            padding-right: 2.0em !important;
+        }
+
+        .toastr {
+            padding-right: 1.25rem !important;
+        }
+
+        .swal2-success {
+            transform: rotateY(180deg);
+        }
+
+        .component-btn-group {
+            left: 0 !important;
+        }
+    </style>
+
+
+    <link href="https://ibolak.com/modules/user/css/login.css?v=1706709978" rel="stylesheet" type="text/css" />
+
+</head>
+
+
+
+<body class="app-blank bgi-size-cover bgi-attachment-fixed bgi-position-center">
+    <!--begin::Authentication-->
+    <div id="login"
+        class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
+
+        <!--begin::Content-->
+        <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
+
+            <!--begin::Wrapper-->
+            <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
+
+                <div id="intro" class="py-4">
+                    <div class="login-column px-5">
+                        <div class="d-flex justify-content-center mb-5">
+                            <a href="https://ibolak.com">
+                                <img src="Files/raya12.png" width="240" class="img-fluid">
+                            </a>
+                        </div>
+                        <div class="d-block">
+                            <h2>ورود یا ثبت‌نام</h2>
+                            <div class="input-wrapper my-4">
+
+                                <span class="pr-1" style="font-size: 15px;">لطفا شماره موبایل خود را وارد نمایید</span>
+
+                                <!--begin::Input-->
+                                <input class="form-control form-control-lg form-control-solid mt-3
+                             only-digits  " autocomplete="email" dir="ltr" maxlength="11" minlength="11"
+                                    placeholder="لطفا شماره موبایل خود را وارد نمایید" type="text" required
+                                    name="username" />
+                                <!--end::Input-->
+                            </div>
+
+                            <!--begin::Submit-->
+                            <div class="d-flex flex-center mt-2">
+                                <button
+                                    class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+                                    type="button" id="btn-intro">
+                                    <span style="font-size: 15px;">ورود </span>
+                                </button>
+                            </div>
+                            <!--end::Submit-->
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--<div id="enterpass" class="card d-none">
+                    <div class="position-relative">
+                        <div class="login-column">
+                            <div class="d-flex justify-content-center mb-5">
+                                <a href="https://ibolak.com">
+                                    <img src="https://ibolak.com/storage/image/2020/6/optimized/1591207190-H5H95IHchRJXi4yy.png"
+                                        width="240" class="img-fluid">
+                                </a>
+                            </div>
+
+                            <div class="d-block" data-kt-password-meter="true">
+                                <h2 class="text-right mb-0">مشخصات خود را کامل کنید:</h2>
+                                <div class="input-wrapper mb-4 ">
+                                    <input class="form-control form-control-lg form-control-solid mt-4"
+                                        autocomplete="off" placeholder="نام" type="text" required dir="rtl"
+                                        name="firstname" />
+                                    <input class="form-control form-control-lg form-control-solid mt-4"
+                                        autocomplete="off" placeholder="نام خانوادگی" type="text" dir="rtl" required
+                                        name="lastname" />
+
+
+                                
+                                    <div class="fv-row" data-kt-password-meter="true">
+                
+                                        <div class="mb-1">
+
+                                            
+                                            <div class="position-relative my-3">
+                                                <input class="form-control form-control-lg form-control-solid mt-4"
+                                                    autocomplete="new-password" placeholder="رمزعبور" dir="ltr"
+                                                    minlength="8" type="password" required name="new-password" />
+
+
+                                                
+                                                <span
+                                                    class="btn btn-sm btn-icon position-absolute translate-middle top-50 start-0 ms-10"
+                                                    data-kt-password-meter-control="visibility">
+                                                    <i class="bi bi-eye-slash  fs-1"><span class="path1"></span><span
+                                                            class="path2"></span><span class="path3"></span><span
+                                                            class="path4"></span></i>
+                                                    <i class="bi bi-eye d-none fs-1"><span class="path1"></span><span
+                                                            class="path2"></span><span class="path3"></span></i>
+                                                </span>
+                                                
+                                            </div>
+                            
+                                        </div>
+
+                                    </div>
+                                    
+
+
+                                    <input class="form-control form-control-lg form-control-solid mt-4"
+                                        autocomplete="off" placeholder="تکرار رمزعبور" dir="ltr" minlength="8"
+                                        type="password" required name="confirm-password" />
+
+                                </div>
+                               
+                                <div class="alert alert-primary d-flex align-items-center p-4">
+                                    
+                                    <i class="ki-duotone ki-shield-tick fs-2hx text-success me-4"><span
+                                            class="path1"></span><span class="path2"></span></i>
+                                    
+                                    <div class="d-flex flex-column">
+                                        
+                                        <span>کلمه عبور باید حداقل ۸ کارکتر و ترکیبی از اعداد و حروف انگلیسی
+                                            باشد.</span>
+                                       
+                                    </div>
+                                   
+                                </div>
+                                
+                                <div class="d-flex flex-center mt-2">
+                                    <button
+                                        class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+                                        type="button" id="btn-submit-pass-reg">
+                                        <span>ثبت‌نام </span>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="enterresetpass" class=" py-4 d-none">
+                    <div class="card-body position-relative">
+                        <div class="login-column">
+                            <div class="d-flex justify-content-center mb-5">
+                                <a href="https://ibolak.com">
+                                    <img src="https://ibolak.com/storage/image/2020/6/optimized/1591207190-H5H95IHchRJXi4yy.png"
+                                        width="240" class="img-fluid">
+                                </a>
+                            </div>
+
+                            <div class="d-block">
+                                <h2 class="text-right mb-0">فراموشی کلمه عبور</h2>
+                                <div class="input-wrapper mb-4 ">
+                                    <input class="form-control form-control-lg form-control-solid mt-4"
+                                        autocomplete="off" dir="ltr" type="email" required name="email" />
+
+                                </div>
+                                
+                                <div class="d-flex flex-center mt-2 col-12">
+                                    <button
+                                        class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+                                        type="button" id="btn-submit-reset-pass">
+                                        <span class="current-state">بازیابی رمزعبور </span>
+                                    </button>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="enterpass-login" class=" py-4 d-none">
+                    <div class="card-body position-relative">
+                        <div class="login-column">
+                            <div class="d-flex justify-content-center mb-5">
+                                <a href="https://ibolak.com">
+                                    <img src="https://ibolak.com/storage/image/2020/6/optimized/1591207190-H5H95IHchRJXi4yy.png"
+                                        width="240" class="img-fluid">
+                                </a>
+                            </div>
+
+                            <div class="d-block">
+                                <h2 class="text-right mb-0">رمز عبور را وارد کنید</h2>
+                                <div class="input-wrapper mb-4 ">
+                                    <input class="form-control form-control-lg form-control-solid my-4"
+                                        autocomplete="current-password" dir="ltr" type="password" required
+                                        name="password" />
+
+                                </div>
+                                <div class="mb-5">
+                                    <a href="https://ibolak.com/reset-password" target="_blank" class="text-primary">
+                                        فراموشی رمزعبور
+                                        <i class="fas fa-angle-left align-middle mr-2"></i>
+                                    </a>
+                                </div>
+                                <div class="mb-5">
+                                    <a href="#" class="text-primary gotoverify">
+                                        ورود با رمز یک‌بار مصرف
+                                        <i class="fas fa-angle-left align-middle mr-2"></i>
+                                    </a>
+                                </div>
+
+                                <div class="d-flex flex-center mt-2">
+                                    <button
+                                        class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+                                        type="button" id="btn-submit-pass">
+                                        <span>تایید </span>
+                                    </button>
+                                </div>
+                               
+                        </div>
+                    </div>
+                </div>
+                <div id="verification-login" class=" py-4 d-none">
+                   
+                    <div class="text-center mb-10">
+                        <img alt="Logo" class="mh-125px"
+                            src="https://ibolak.com/demo1/media/svg/misc/smartphone.svg?v=1706709978" />
+                    </div>
+                    
+                    <div class="text-center mb-10">
+                        
+                        <h1 class="text-dark mb-3">کد فعال‌سازی را وارد کنید</h1>
+                        
+                        <div class="text-muted fw-bold fs-5 mb-5">کد تایید را وارد کنید</div>
+
+
+
+
+
+
+                       
+                    </div>
+                    
+                    <div class="mb-10 px-md-10">
+                        
+                        <div class="fw-bolder text-start text-dark fs-6 mb-1 ms-1"></div>
+                      
+                        <div class="fieldset-login" style="direction: ltr">
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                        </div>
+                       
+                    </div>
+                   
+                    <div id="resend-code-login" class="d-block text-center mb-3">
+                        <span>
+                            زمان باقی‌مانده تا ارسال مجدد:
+                            <b>120</b> ثانیه
+                        </span>
+                    </div>
+                    <div class="mb-2">
+                        <a href="#" class="text-primary gotopass">
+                            ورود با رمز عبور
+
+                            <i class="fas fa-angle-left align-middle mr-2"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="mb-2">
+                        <a href="#" class="text-primary gotoverify">
+                            ورود با رمز یکبار مصرف
+                            <i class="fas fa-angle-left align-middle mr-2"></i>
+                        </a>
+                    </div>
+
+
+
+
+
+
+                   
+                    <div class="d-flex flex-center mt-2">
+                        <button
+                            class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+                            type="button" id="btn-login-verify">
+                            <span>تایید </span>
+                        </button>
+                    </div>
+                   
+
+                </div>
+                <div id="verification" class=" py-4 d-none">
+                   
+                    <div class="text-center mb-10">
+                        <img alt="Logo" class="mh-125px"
+                            src="https://ibolak.com/demo1/media/svg/misc/smartphone.svg?v=1706709978" />
+                    </div>
+                    
+                    
+                    <div class="text-center mb-10">
+                       
+                        <h1 class="text-dark mb-3">کد فعال‌سازی را وارد کنید</h1>
+                        
+                        <div class="text-muted fw-bold fs-5 mb-5">کد تایید را وارد کنید</div>
+                        <p class="m-0 line-height">
+                            حساب کاربری با شماره موبایل <span class="number fw-bolder text-dark fs-3"></span> وجود
+                            ندارد. برای
+                            ساخت حساب جدید،کد تایید برای این
+                            شماره ارسال گردید.
+
+                        </p>
+                       
+                    </div>
+                   
+                    <div class="mb-10 px-md-10">
+                       
+                        <div class="fw-bolder text-start text-dark fs-6 mb-1 ms-1"></div>
+                       
+                        <div class="fieldset-register" style="direction: ltr">
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                            <label class="boxvalidation"><input class="field" type="number" /></label>
+                        </div>
+                       
+                    </div>
+                    
+                    <div id="resend-code-register" class="d-block text-center mb-4">
+                        <span>
+                            زمان باقی‌مانده تا ارسال مجدد:
+                            <b>120</b> ثانیه
+                        </span>
+                    </div>
+
+                   
+                    <div class="d-flex flex-center mt-2">
+                        <button
+                            class="btn btn-lg btn-primary fw-bolder col-12 btn-block d-flex justify-content-center align-items-center"
+                            type="button" id="btn-reg-verify">
+                            <span>ادامه </span>
+                        </button>
+                    </div>
+                   
+
+                </div>
+            </div>
+            
+        </div>
+       
+
+        <div class="d-flex flex-center flex-column-auto p-10">
+          
+            <div class="d-flex align-items-center fw-bold fs-6">
+
+
+
+
+
+            </div>
+           
+        </div>
+       
+
+    </div>-->
+    <!--end::Authentication-->
+
+
+
+    <script src="https://ibolak.com/demo1/plugins/global/plugins.bundle.js?v=1706709978"></script>
+    <script src="https://ibolak.com/demo1/js/scripts.bundle.js?v=1706709978"></script>
+    <script type="text/javascript" src="https://ibolak.com/js/vanilla-masker.min.js"></script>
+
+    <!-- <script>
+        function toast(title, msg, type, options) {
+            if (typeof toastr === "undefined") {
+                return;
+            }
+
+            var $addClear = true;
+            let timeOut = (options && options.timeOut) || 6000;
+            let progressBar = (options && options.progressBar) || false;
+
+            toastr.options = {
+                closeButton: false,
+                progressBar,
+                positionClass: "toast-bottom-left",
+                onclick: null,
+                timeOut,
+                rtl: false,
+                extendetTimeout: 0,
+                closeOnHover: false,
+                tapToDismiss: true,
+            };
+
+            toastr[type](msg, title);
+
+            if (timeOut.length) {
+                toastr.options.timeOut = $addClear ? 0 : timeOut;
+            }
+        }
+
+        $(document).ready(function () {
+            $('.only-digits').each(function () {
+                $(this).on('input', function (e) {
+                    return this.value = toEnglishDigits(this.value.replace(/[^\d\u06F0-\u06F90-9]+$/, ''));
+                });
+            });
+            function toEnglishDigits(str) {
+
+                // convert persian digits [۰۱۲۳۴۵۶۷۸۹]
+                var e = '۰'.charCodeAt(0);
+                str = str.replace(/[۰-۹]/g, function (t) {
+                    return t.charCodeAt(0) - e;
+                });
+
+                // convert arabic indic digits [٠١٢٣٤٥٦٧٨٩]
+                e = '٠'.charCodeAt(0);
+                str = str.replace(/[٠-٩]/g, function (t) {
+                    return t.charCodeAt(0) - e;
+                });
+                return str;
+            }
+            let mask = VMasker(document.querySelectorAll("input[name='verify-code']")).maskPattern("9-9-9-9-9");
+            const redirectUrl = "https://ibolak.com";
+
+            let IntroDiv = $("#intro"),
+                passDiv = $("#enterpass"),
+                passLoginDiv = $("#enterpass-login"),
+                verifRegDiv = $("#verification"),
+                verifLogDiv = $("#verification-login"),
+                goToPassLoginBtn = verifLogDiv.find("a.gotopass"),
+                goToVerifyLogin = passLoginDiv.find("a.gotoverify"),
+                passwordInput = passLoginDiv.find("input[name='password']"),
+                usernameInput = $("input[name='username']"),
+                userData = {},
+                mobilePattern = /(0|\+98)?([ ]|-|[()]){0,2}9[0|1|2|3|4|9]([ ]|-|[()]){0,2}(?:[0-9]([ ]|-|[()]){0,2}){8}/ig,
+                emailPattern = /\S+@\S+\.\S+/;
+
+            const fieldsLogin = document.querySelectorAll(".fieldset-login .field"),
+                fieldsRegister = document.querySelectorAll(".fieldset-register .field"),
+                RESEND_INTERVAL = 120;
+
+            // begin::Mobile Validation
+            let junkReg = /[^\d]/ig,
+                persinNum = [/۰/gi, /۱/gi, /۲/gi, /۳/gi, /۴/gi, /۵/gi, /۶/gi, /۷/gi, /۸/gi, /۹/gi],
+                num2en = function (str) {
+                    for (var i = 0; i < 10; i++) {
+                        str = str.replace(persinNum[i], i);
+                    }
+                    return str;
+                },
+                getMobiles = function (str) {
+                    var mobiles = num2en(str + '').match(mobilePattern) || [];
+                    mobiles.forEach(function (value, index, arr) {
+                        arr[index] = value.replace(junkReg, '');
+                        arr[index][0] === '0' || (arr[index] = '0' + arr[index]);
+                    });
+                    return mobiles;
+                };
+            // end::Mobile Validation
+
+
+            // begin::Public
+            usernameInput.focus()
+            // end::Public
+
+            // begin::Listeners
+
+            // Intro
+            IntroDiv.keypress(function (event) {
+                let keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $("#btn-intro").click(loginIntro());
+                }
+            });
+
+            $("#btn-intro").click(function () {
+                loginIntro()
+            });
+
+            async function loginIntro() {
+
+                $("#btn-intro").attr('disabled', 'disabled');
+                let usernameInputValue = $.trim(usernameInput.val());
+
+                if (usernameInputValue == '') {
+                    toast('خطا', 'لطفا شماره تلفن خود را وارد کنید.', 'error');
+                    usernameInput.addClass("border border-danger");
+                    usernameInput.val('');
+                    usernameInput.focus();
+                    $("#btn-intro").removeAttr('disabled');
+                    setTimeout(() => {
+                        usernameInput.removeClass("border border-danger");
+                    }, 3500);
+                    return
+                }
+
+
+                if (!isNaN(usernameInputValue)) {
+
+                    if (getMobiles(usernameInputValue).length == 0) {
+                        toast('خطا', 'شماره همراه خود را به درستی وارد کنید.', 'error');
+                        usernameInput.addClass("border border-danger");
+                        usernameInput.focus();
+                        $("#btn-intro").removeAttr('disabled');
+                        setTimeout(() => {
+                            usernameInput.removeClass("border border-danger");
+                        }, 3500);
+                        return
+                    }
+
+                    let data = {
+                        mobile: getMobiles(usernameInputValue)[0],
+                        redirect_url: redirectUrl
+                    }
+
+                    userData.mobile = data.mobile;
+
+                    await checkUserApi(data)
+                        .then(function (res) {
+                            if (res.status == 'registerPage') {
+
+                                sendCodeRegister(data).then(function () {
+
+                                    toast("کد تاییدیه", "کد تایید برای شما ارسال شد",
+                                        "success", {
+                                        timeOut: 10000
+                                    });
+
+                                    goToVerificationRegister();
+
+                                })
+                                    .catch(function (err) {
+                                        if (err.status == 429 && ('type' in err && err.type == 'tooManyAttemptsSms')) {
+
+                                            goToVerificationRegister();
+
+                                        } else {
+                                            toast("خطا", err.responseJSON.message, "error", {
+                                                timeOut: 10000
+                                            });
+                                        }
+                                    })
+
+
+                            } else if (res.status == 'loginPage') {
+
+                                goToPassLogin();
+                                // sendCodeLogin(data).then(function () {
+                                //
+                                //     toast("کد تاییدیه", "کد تایید برای شما ارسال شد",
+                                //         "info", {
+                                //             timeOut: 10000
+                                //         });
+                                //
+                                //     goToVerificationLogin();
+                                //
+                                // })
+                                //     .catch(function (err) {
+                                //         if (err.status == 429  && ('type' in err && err.type == 'tooManyAttemptsSms')) {
+                                //
+                                //             goToVerificationLogin();
+                                //
+                                //         } else {
+                                //             toast("خطا", err.responseJSON.message, "error", {
+                                //                 timeOut: 10000
+                                //             });
+                                //         }
+                                //     })
+
+                            }
+
+                        })
+                        .catch(function (err) {
+                            toast("خطا", err.responseJSON.message, "error", {
+                                timeOut: 10000
+                            });
+                        });
+
+                } else {
+
+                    if (!emailPattern.test(usernameInputValue)) {
+                        toast('خطا', 'لطفا ایمیل خود را به درستی وارد کنید', 'error');
+                        usernameInput.addClass("border border-danger");
+                        usernameInput.focus();
+                        $("#btn-intro").removeAttr('disabled');
+                        setTimeout(() => {
+                            usernameInput.removeClass("border border-danger");
+                        }, 3500);
+                        return
+                    }
+
+
+                    let data = {
+                        email: usernameInputValue,
+                        redirect_url: redirectUrl
+                    }
+
+                    await checkUserEmail(data)
+                        .then(function (res) {
+                            if (res.status == 'emailLoginPage') {
+
+                                IntroDiv.addClass("d-none");
+                                passLoginDiv.removeClass("d-none");
+
+                                goToVerifyLogin.addClass("d-none")
+
+                                passwordInput.val('');
+                                passwordInput.focus();
+
+                                passLoginDiv.find('button.back').click(function () {
+                                    passLoginDiv.addClass('d-none');
+                                    IntroDiv.removeClass('d-none');
+                                    usernameInput.val('');
+                                    usernameInput.focus();
+                                    goToVerifyLogin.removeClass("d-none")
+                                })
+
+                                userData = {
+                                    mobile: '',
+                                    email: data.email
+                                }
+
+                            } else if (res.status == 'registerPage') {
+
+                                toast("کد تاییدیه", res.message, "error", {
+                                    timeOut: 10000
+                                });
+
+                            }
+
+                        })
+                        .catch(function (err) {
+                            toast("خطا", err.responseJSON.message, "error", {
+                                timeOut: 10000
+                            });
+                        });
+
+                }
+
+                $("#btn-intro").removeAttr('disabled');
+            }
+
+            // login -> verify
+            verifLogDiv.keypress(function (event) {
+                let keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $("#btn-login-verify").click(btnLoginVerify())
+                }
+            });
+
+            $("#btn-login-verify").click(function () {
+                btnLoginVerify()
+            });
+
+            async function btnLoginVerify() {
+                let $this = $("#btn-login-verify");
+                $this.attr('disabled', 'disabled');
+
+                let verifyInput = '';
+                fieldsLogin.forEach(ele => {
+                    verifyInput += ele.value
+                });
+
+                if (verifyInput == '') {
+                    toast("خطا", "کد ارسالی را به درستی وارد کنید.", "error");
+                    $this.removeAttr('disabled');
+                    return
+                }
+
+                const data = {
+                    mobile: userData.mobile,
+                    redirect_url: redirectUrl,
+                    sms_token: verifyInput,
+                    _token: "UttsEHBZPKQQR2xn1Mv1iL5spNwotczCbRVMDJ0c",
+                }
+
+                await verifyCodeApiLogin(data)
+                    .then(function (res) {
+                        let url = res.redirectTo;
+                        toast("", "با موفقیت وارد شدید.", "success");
+
+                        setTimeout(function () {
+                            window.location.href = url;
+                        }, 1000)
+                    })
+                    .catch(function (err) {
+                        toast("خطا", err.responseJSON.message, "error");
+                        $this.removeAttr('disabled');
+                    });
+
+            }
+
+
+            // login -> Enter Password
+            $(goToPassLoginBtn).click(function (e) {
+                e.preventDefault();
+
+                verifLogDiv.addClass("d-none");
+                passLoginDiv.removeClass("d-none");
+
+                passwordInput.val('');
+                passwordInput.focus();
+
+                passLoginDiv.find('button.back').click(function () {
+                    passLoginDiv.addClass('d-none');
+                    IntroDiv.removeClass('d-none');
+                    usernameInput.val('');
+                    usernameInput.focus();
+                })
+
+            });
+
+            // login -> Go To verify
+            $(goToVerifyLogin).click(async function (e) {
+                e.preventDefault();
+
+
+                verifLogDiv.find("a.gotoverify").addClass("d-none")
+
+                passLoginDiv.addClass("d-none");
+                verifLogDiv.removeClass("d-none");
+
+                fieldsLogin.forEach((element, index, array) => {
+                    array[index].value = ''
+                });
+                verifLogDiv.find('.fieldset-login .boxvalidation:first-child input').focus();
+
+                verifLogDiv.find('button.back').click(function () {
+                    verifLogDiv.addClass('d-none');
+                    IntroDiv.removeClass('d-none');
+                    usernameInput.val('');
+                    usernameInput.focus();
+                });
+
+
+                // Ajax Login OTP
+
+                sendCodeLogin({
+                    mobile: userData.mobile
+                }).then(function () {
+
+                    toast("کد تاییدیه", "کد تایید برای شما ارسال شد", "success", {
+                        timeOut: 10000
+                    });
+
+                    goToVerificationLogin();
+
+                })
+                    .catch(function (err) {
+                        if (err.status == 429 && ('type' in err && err.type == 'tooManyAttemptsSms')) {
+                            goToVerificationLogin();
+                        } else {
+                            toast("خطا", err.responseJSON.message, "error", {
+                                timeOut: 10000
+                            });
+                        }
+                    })
+
+            })
+
+
+            // Login -> SendPassword
+            passLoginDiv.keypress(function (event) {
+                let keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $("#btn-submit-pass").click(btnSubmitPass())
+                }
+            });
+
+            $("#btn-submit-pass").click(function () {
+                btnSubmitPass()
+            });
+
+            async function btnSubmitPass() {
+                let $this = $("#btn-submit-pass");
+                $this.attr('disabled', 'disabled');
+
+                let passwordInputValue = passwordInput.val();
+
+                if (passwordInputValue == '') {
+                    toast("خطا", "رمز عبور خود را وارد کنید", "error");
+                    passwordInput.addClass("border border-danger");
+                    passwordInput.val('');
+                    passwordInput.focus();
+                    setTimeout(() => {
+                        passwordInput.removeClass("border border-danger");
+                    }, 3500);
+                    $this.removeAttr('disabled');
+                    return
+                }
+
+
+                let data = {
+                    email: userData.email,
+                    password: passwordInputValue,
+                    mobile: userData.mobile,
+                    _token: "UttsEHBZPKQQR2xn1Mv1iL5spNwotczCbRVMDJ0c",
+                }
+
+                await sendPasswordLoginApi(data)
+                    .then(function (res) {
+                        toast("", "با موفقیت وارد شدید.", "success");
+
+                        setTimeout(function () {
+                            window.location.href = redirectUrl;
+                        }, 1000)
+                    })
+                    .catch(function (err) {
+                        toast("خطا", err.responseJSON.message, "error");
+                        $this.removeAttr('disabled');
+                    });
+
+            }
+
+
+            //Register -> Verify Code
+            verifRegDiv.keypress(function (event) {
+                let keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $("#btn-reg-verify").click(btnRegVerify())
+                }
+            });
+
+            $("#btn-reg-verify").click(function () {
+                btnRegVerify()
+            });
+
+            async function btnRegVerify() {
+                $("#btn-reg-verify").attr('disabled', 'disabled');
+
+
+                let verifyInput = '';
+                fieldsRegister.forEach(ele => {
+                    verifyInput += ele.value
+                });
+
+
+                if (verifyInput == '') {
+                    toast("خطا", "کد ارسالی را به درستی وارد کنید.", "error");
+                    $("#btn-reg-verify").removeAttr('disabled');
+                    return
+                }
+
+                // Ajax Check Register Code
+                let data = {
+                    sms_token: verifyInput,
+                    redirect_url: redirectUrl,
+                    mobile: userData.mobile
+                }
+
+                await verifyCodeApi(data)
+                    .then(function (res) {
+                        userData.token = data.sms_token
+                        goToNewPassword()
+                    })
+                    .catch(function (err) {
+                        toast("خطا", err.responseJSON.message, "error");
+                    });
+
+                $("#btn-reg-verify").removeAttr('disabled');
+            }
+
+
+            // Register -> Submit Password
+            passDiv.keypress(function (event) {
+                let keycode = (event.keyCode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                    $("#btn-submit-pass-reg").click(btnSubmitPassReg())
+                }
+            });
+
+            $("#btn-submit-pass-reg").click(function () {
+                btnSubmitPassReg()
+            });
+
+            async function btnSubmitPassReg() {
+                let authType = "2"
+                let emailIsRequired = ""
+                $("#btn-submit-pass-reg").attr('disabled', 'disabled');
+
+                let passInput = passDiv.find("input[name='new-password']"),
+                    confirmInput = passDiv.find("input[name='confirm-password']"),
+                    firstnameInput = passDiv.find("input[name='firstname']"),
+                    lastnameInput = passDiv.find("input[name='lastname']"),
+                    emailInput = passDiv.find("input[name='email']");
+
+                let firstnameInputValue = $.trim(firstnameInput.val()),
+                    lastnameInputValue = $.trim(lastnameInput.val()),
+                    emailInputValue = $.trim(emailInput.val());
+
+
+                if (firstnameInputValue == '' || lastnameInputValue == '' || (emailIsRequired && emailInputValue == '')) {
+                    toast("خطا", "مشخصات خود را کامل کنید.", "error");
+                    $("#btn-submit-pass-reg").removeAttr('disabled');
+                    return;
+                }
+
+                if (passInput.val() == '') {
+                    toast("خطا", "رمزعبور مورد نظر خود را وارد کنید.", "error");
+                    passInput.addClass("border border-danger");
+                    passInput.val('');
+                    passInput.focus();
+                    $("#btn-submit-pass-reg").removeAttr('disabled');
+                    setTimeout(() => {
+                        passInput.removeClass("border border-danger");
+                    }, 3500);
+                    return;
+                }
+
+                if (confirmInput.val() != passInput.val()) {
+                    toast("خطا", "رمزعبور وارد شده با تکرار رمزعبور یکسان نیست.", "error");
+                    confirmInput.addClass("border border-danger");
+                    confirmInput.focus();
+                    $("#btn-submit-pass-reg").removeAttr('disabled');
+                    setTimeout(() => {
+                        confirmInput.removeClass("border border-danger");
+                    }, 3500);
+                    return;
+                }
+
+
+                let data = {
+                    mobile: userData.mobile,
+                    redirect_url: redirectUrl,
+                    sms_token: userData.token,
+                    firstname: firstnameInputValue,
+                    lastname: lastnameInputValue,
+                    password: passInput.val(),
+                    password_confirmation: confirmInput.val(),
+                    _token: "UttsEHBZPKQQR2xn1Mv1iL5spNwotczCbRVMDJ0c"
+                }
+                if (emailIsRequired) {
+                    data.email = emailInputValue
+                }
+
+
+                await sendPasswordRegisterApi(data)
+                    .then(function (res) {
+                        toast("", "با موفقیت وارد شدید.", "success");
+
+                        setTimeout(function () {
+                            window.location.href = redirectUrl;
+                        }, 1000)
+                    })
+                    .catch(function (err) {
+                        toast("خطا", err.responseJSON.message, "error");
+                        $("#btn-submit-pass-reg").removeAttr('disabled');
+                    })
+
+            }
+            // end::Listeners
+
+            function goToVerificationLogin() {
+
+                setResendInterval(RESEND_INTERVAL);
+
+                IntroDiv.addClass("d-none");
+                verifLogDiv.removeClass("d-none");
+
+                fieldsLogin.forEach((element, index, array) => {
+                    array[index].value = ''
+                });
+                verifLogDiv.find('.fieldset-login .boxvalidation:first-child input').focus();
+
+                verifLogDiv.find('span.number').text(getMobiles(usernameInput.val())[0]);
+                verifLogDiv.find('button.back').click(function () {
+                    verifLogDiv.addClass('d-none');
+                    IntroDiv.removeClass('d-none');
+                    usernameInput.val('');
+                    usernameInput.focus();
+                })
+
+            }
+
+            function goToPassLogin() {
+                IntroDiv.addClass("d-none");
+                passLoginDiv.removeClass("d-none");
+
+                passwordInput.val('');
+                passwordInput.focus();
+
+                passLoginDiv.find('button.back').click(function () {
+                    passLoginDiv.addClass('d-none');
+                    IntroDiv.removeClass('d-none');
+                    usernameInput.val('');
+                    usernameInput.focus();
+                })
+            }
+
+            function goToVerificationRegister() {
+                setResendIntervalRegister(RESEND_INTERVAL);
+
+                IntroDiv.addClass("d-none");
+                verifRegDiv.removeClass("d-none");
+
+                fieldsRegister.forEach((element, index, array) => {
+                    array[index].value = ''
+                });
+                verifRegDiv.find('.fieldset-register .boxvalidation:first-child input').focus();
+
+                verifRegDiv.find('span.number').text(getMobiles(usernameInput.val())[0]);
+                verifRegDiv.find('button.back').click(function () {
+                    verifRegDiv.addClass('d-none');
+                    IntroDiv.removeClass('d-none');
+                    usernameInput.focus();
+                    usernameInput.val('');
+                })
+
+            }
+
+            function goToNewPassword() {
+                verifRegDiv.addClass("d-none");
+                passDiv.removeClass("d-none");
+            }
+
+
+            // checkuser api
+            function checkUserApi(data) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/api/v1/auth/check-number",
+                        data: data, // stringyfy before passing
+                        success: function (res) {
+                            resolve(res);
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+            }
+
+            // send Code
+            function sendCodeRegister(phone) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/api/v1/auth/send-register-code",
+                        data: phone, // stringyfy before passing
+                        success: function (res) {
+                            resolve(res)
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+
+            }
+
+            // send Code
+            function sendCodeLogin(phone) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/api/v1/auth/send-login-code",
+                        data: phone,
+                        success: function (res) {
+                            resolve(res)
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+
+            }
+
+            // Verify api Register
+            function verifyCodeApi(data) {
+
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/api/v1/auth/check-register-code",
+                        data: data,
+                        success: function (res) {
+                            resolve(res);
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+            }
+
+            // Verify api Login
+            function verifyCodeApiLogin(data) {
+
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/login-otp",
+                        data: data,
+                        success: function (res) {
+                            resolve(res);
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+            }
+
+            // Send Password for login
+            function sendPasswordLoginApi(data) {
+                return new Promise(function (resolve, reject) {
+                    let url = data.mobile ? "https://ibolak.com/login-mobile" :
+                        "https://ibolak.com/login-email";
+
+                    $.ajax({
+                        type: 'post',
+                        url,
+                        data,
+                        success: function (res) {
+                            resolve(res);
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+
+                });
+            }
+
+            // Send Password register
+            function sendPasswordRegisterApi(data) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/register",
+                        data,
+                        success: function (res) {
+                            resolve(res);
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+            }
+
+            // checkUser email
+            function checkUserEmail(data) {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        type: 'post',
+                        url: "https://ibolak.com/api/v1/auth/check-email",
+                        data,
+                        success: function (res) {
+                            resolve(res);
+                        },
+                        error: function (err) {
+                            reject(err)
+                        }
+                    });
+                });
+            }
+
+            // end::Fucntions
+
+
+
+            function handleInputField({ target }) {
+
+                const value = target.value.slice(0, 1);
+                target.value = value;
+
+                const step = value ? 1 : -1;
+                const fieldIndex = [...fieldsLogin].findIndex((field) => field === target);
+                const focusToIndex = fieldIndex + step;
+
+                if (focusToIndex < 0 || focusToIndex >= fieldsLogin.length) return;
+
+                fieldsLogin[focusToIndex].focus();
+            }
+
+            function handleInputFieldRegister({ target }) {
+
+                const value = target.value.slice(0, 1);
+                target.value = value;
+
+                const step = value ? 1 : -1;
+                const fieldIndex = [...fieldsRegister].findIndex((field) => field === target);
+                const focusToIndex = fieldIndex + step;
+
+                if (focusToIndex < 0 || focusToIndex >= fieldsRegister.length) return;
+
+                fieldsRegister[focusToIndex].focus();
+            }
+
+            fieldsLogin.forEach((field) => {
+                field.addEventListener("input", handleInputField);
+            });
+
+            fieldsLogin[fieldsLogin.length - 1].addEventListener("input", function ({ target }) {
+                if (!target.value) return;
+                lastInput = target.value;
+                btnLoginVerify()
+            })
+
+            fieldsRegister.forEach((field) => {
+                field.addEventListener("input", handleInputFieldRegister);
+            });
+
+            fieldsRegister[fieldsRegister.length - 1].addEventListener("input", function ({ target }) {
+                if (!target.value) return;
+                lastInput = target.value;
+                btnRegVerify()
+            })
+
+
+
+
+
+
+            $('#resend-code-login span b').text(RESEND_INTERVAL);
+            $('#resend-code-register span b').text(RESEND_INTERVAL);
+
+            function activateResendLink() {
+                const resendLink = document.createElement('a');
+                resendLink.href = "#";
+                resendLink.classList.add('text-blue');
+                resendLink.classList.add('font-weight-bold');
+                resendLink.innerText = "ارسال مجدد کد تایید";
+
+                resendLink.addEventListener('click', async function (e) {
+                    e.preventDefault();
+                    $('#resend-code-login a').remove();
+                    $('#resend-code-login').append('<strong>درحال ارسال لینک</strong>');
+
+                    await sendCodeLogin(userData).then(function () {
+
+                        toast("کد تاییدیه", "کد تایید برای شما ارسال شد",
+                            "info", {
+                            timeOut: 10000
+                        });
+                    })
+                        .catch(function (err) {
+                            toast("خطا", err.responseJSON.message, "error", {
+                                timeOut: 10000
+                            });
+                        })
+
+
+                    $('#resend-code-login span b').text(RESEND_INTERVAL);
+                    setResendInterval(RESEND_INTERVAL);
+                    $('#resend-code-login strong').css('display', 'none');
+                    $('#resend-code-login span').css('display', 'block');
+
+
+                });
+
+                $('#resend-code-login').append(resendLink);
+                $('#resend-code-login span').css('display', 'none');
+                $('#resend-code-login strong').css('display', 'none');
+            }
+
+            function activateResendLinkRegister() {
+                const resendLink = document.createElement('a');
+                resendLink.href = "#";
+                resendLink.classList.add('text-blue');
+                resendLink.classList.add('font-weight-bold');
+                resendLink.innerText = "ارسال مجدد کد تایید";
+
+                resendLink.addEventListener('click', async function (e) {
+                    e.preventDefault();
+                    $('#resend-code-register a').remove();
+                    $('#resend-code-register').append('<strong>درحال ارسال لینک</strong>');
+
+                    await sendCodeRegister(userData).then(function () {
+
+                        toast("کد تاییدیه", "کد تایید برای شما ارسال شد",
+                            "info", {
+                            timeOut: 10000
+                        });
+
+                    })
+                        .catch(function (err) {
+
+                            toast("خطا", err.responseJSON.message, "error", {
+                                timeOut: 10000
+                            });
+                        })
+
+                    $('#resend-code-register span b').text(RESEND_INTERVAL);
+                    setResendIntervalRegister(RESEND_INTERVAL);
+                    $('#resend-code-register strong').css('display', 'none');
+                    $('#resend-code-register span').css('display', 'block');
+
+                });
+
+                $('#resend-code-register').append(resendLink);
+                $('#resend-code-register span').css('display', 'none');
+                $('#resend-code-register strong').css('display', 'none');
+            }
+
+            function setResendInterval(interval) {
+                const resendInterval = setInterval(function () {
+                    $('#resend-code-login span b').text(interval);
+                    $('#resend-code-login a').remove();
+
+                    $('#resend-code-login span').css('display', 'block');
+
+                    if (interval == 0) {
+                        activateResendLink();
+                        return clearInterval(resendInterval);
+                    }
+                    return interval--;
+                }, 1000);
+            }
+
+            function setResendIntervalRegister(interval) {
+                const resendInterval = setInterval(function () {
+                    $('#resend-code-register span b').text(interval);
+                    $('#resend-code-register a').remove();
+
+                    $('#resend-code-register span').css('display', 'block');
+
+                    if (interval == 0) {
+                        activateResendLinkRegister();
+                        return clearInterval(resendInterval);
+                    }
+                    return interval--;
+                }, 1000);
+            }
+        });
+
+        class PinCode {
+            constructor(element) {
+                this._element = element;
+                this._digits = Array.from(element.querySelectorAll('.digit'));
+                this._jumper = element.querySelector('.digit-jumper');
+                this._input = element.querySelector('.pin-code-input');
+                this._form = element.parentElement;
+                this._submit = element.querySelector('.pin-code-submit');
+                this._currentDigitIndex = 0;
+                this._canInput = true;
+                this._code = '';
+
+                this._bindEventHandlers();
+            }
+
+            _bindEventHandlers() {
+                this._input.addEventListener('focus', () => {
+                    if (this._currentDigitIndex === 0) {
+                        this._moveJumper(this._currentDigitIndex);
+                    }
+                });
+
+                this._input.addEventListener('input', (e) => {
+                    this._input.value = '';
+
+                    if (this._canInput && (!isNaN(parseFloat(e.data)) && isFinite(e.data))) {
+                        let digit = this._digits[this._currentDigitIndex - 1];
+                        digit.querySelector('span').innerHTML = e.data;
+                        digit.classList.add('filled');
+
+                        this._code += e.data;
+
+                        if (this._currentDigitIndex < this._digits.length) {
+                            this._moveJumper(this._currentDigitIndex);
+                        } else {
+                            this._endInput();
+                        }
+                    }
+                });
+
+                this._form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    this._reset();
+
+                    //alert(`Your code is: ${this._code}`);
+                });
+            }
+
+            _getDistanceToDigit(digit, digitWidth) {
+                let distance = this._getTotalOffsetOfDigit(digit, digitWidth);
+
+                if (this._currentDigitIndex > 0) {
+                    distance = digit.offsetLeft - this._digits[this._currentDigitIndex - 1].offsetLeft;
+                }
+
+                return distance;
+            }
+
+            _getTotalOffsetOfDigit(digit, digitWidth) {
+                return digit.offsetLeft + digit.clientWidth / 2 - digitWidth / 2;
+            }
+
+            _moveJumper(index) {
+                this._canInput = false;
+
+                let digit = this._digits[index],
+                    timeline = new TimelineMax({
+                        onStart: () => {
+                            this._jumper.classList.remove('blinking');
+                        },
+                        onComplete: () => {
+                            this._jumper.classList.add('blinking');
+                            this._currentDigitIndex += 1;
+                            this._canInput = true;
+                        }
+                    }),
+                    digitWidth = parseInt(window.getComputedStyle(digit, ':before').width),
+                    distance = this._getDistanceToDigit(digit, digitWidth),
+                    offset = this._getTotalOffsetOfDigit(digit, digitWidth),
+                    scaleX = distance / digitWidth + 1;
+
+                if (index === 0) {
+                    scaleX += 1;
+                }
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        scaleX: scaleX,
+                        ease: Expo.easeInOut
+                    })
+                );
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        scaleX: 1,
+                        x: offset,
+                        ease: Expo.easeInOut
+                    }),
+                    .3
+                );
+            }
+
+            _endInput() {
+                this._canInput = false;
+
+                let timeline = new TimelineMax({
+                    onStart: () => {
+                        this._jumper.classList.remove('blinking');
+                    },
+                    onComplete: () => {
+                        this._submit.classList.add('visible');
+                    }
+                }),
+                    digit = this._digits[this._currentDigitIndex - 1],
+                    distance = this._element.clientWidth - digit.offsetLeft;
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        scaleX: distance,
+                        ease: Expo.easeInOut
+                    })
+                );
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        scaleX: 1,
+                        ease: Expo.easeInOut
+                    }),
+                    .3
+                );
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        x: this._element.clientWidth,
+                        ease: Expo.easeInOut
+                    }),
+                    .3
+                );
+            }
+
+            _reset() {
+                let timeline = new TimelineMax({
+                    onStart: () => {
+                        this._code = '';
+                        this._currentDigitIndex = 0;
+                    },
+                    onComplete: () => {
+                        this._canInput = true;
+                        this._element.classList.remove('reset');
+
+                        TweenMax.set(this._jumper, {
+                            clearProps: 'transform'
+                        });
+                    }
+                });
+
+                timeline.add(
+                    () => {
+                        this._element.classList.add('reset');
+                    }
+                );
+
+                timeline.add(
+                    () => {
+                        this._submit.classList.remove('visible');
+                    },
+                    .2
+                );
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        scaleX: this._element.clientWidth / 6 + 1,
+                        ease: Expo.easeInOut,
+                        onComplete: () => {
+                            this._digits.forEach((digit) => {
+                                digit.querySelector('span').innerHTML = '';
+                                digit.classList.remove('filled');
+                            });
+                        }
+                    }),
+                    .3
+                );
+
+                timeline.add(
+                    TweenMax.to(this._jumper, .3, {
+                        x: '-100%',
+                        scaleX: 1,
+                        ease: Expo.easeInOut
+                    }),
+                    .6
+                );
+            }
+        }
+
+        document.querySelectorAll('.pin-code').forEach((pinCode) => {
+            new PinCode(pinCode);
+        });
+    </script> -->
+
+
+
+</body>
+
+</html>
